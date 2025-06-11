@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
-from processing_data import * # 데이터 처리 모듈 로드드
+from processing_data import * # 데이터 셋 임포트
+from test_model import TemperatureTCN # 모델 임포트
 from torch.utils.data import DataLoader, random_split
 import torch.nn.functional as F
 import numpy as np
@@ -8,7 +9,6 @@ import os
 from tqdm import tqdm
 import torch.optim as optim
 from sklearn.metrics import r2_score
-from test_model import TemperatureTCN
 
 # CUDA 디바이스 설정
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
