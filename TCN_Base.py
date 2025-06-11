@@ -1,19 +1,6 @@
 import torch
 import torch.nn as nn
 
-# CUDA 디바이스 설정
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device: {device}")
-
-# 하이퍼파라미터 설정
-batch_size = 64 
-dropout_tcn = 0.3  # TCN 블록 내 dropout
-num_epochs = 300    # 에폭 수
-width = 10
-height = 7
-# 체크포인트 저장 디렉토리 생성
-# os.makedirs('./checkpoints', exist_ok=True)
-
 class ResidualBlock(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, dilation):
         super(ResidualBlock, self).__init__()
