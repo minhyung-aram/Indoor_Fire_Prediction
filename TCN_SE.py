@@ -105,6 +105,10 @@ class ResidualBlock(nn.Module):
 
 
 class TemperatureTCN(nn.Module):
+    '''
+    TCN과 SE 모듈을 결합한 모델입니다. Residual Block에 SE Block이 추가 된 것외에는 
+    TCN_Base.py와 같습니다.
+    '''
     def __init__(self, seq_length=30, input_features=70, num_channels=[8, 16, 32, 64], 
                  kernel_size=3, dropout_rate=0.2, height=7, width=10, 
                  fc_output_features=858, upsample_size=(26, 33)):
