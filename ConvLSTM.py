@@ -1,15 +1,6 @@
 import torch
 import torch.nn as nn
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device: {device}")
-
-# 하이퍼파라미터 설정
-batch_size = 64
-num_epochs = 100 
-
-
-
 class ConvLSTMCell(nn.Module):
     """
     기본 ConvLSTM 셀 구현
