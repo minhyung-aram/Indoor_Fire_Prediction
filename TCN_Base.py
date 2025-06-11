@@ -65,6 +65,9 @@ class ResidualBlock(nn.Module):
         return self.final_activation(out + residual)
 
 class TemperatureTCN(nn.Module):
+    '''
+    3D conv를 사용한 TCN입니다. 입력 형태라던가 TCN 하이퍼파라미터들은 자유롭게 설정 가능합니다.
+    '''
     def __init__(self, seq_length=30, input_features=70, num_channels=[8, 16, 32, 64], kernel_size=3):
         super(TemperatureTCN, self).__init__()
         
