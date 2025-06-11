@@ -1,18 +1,6 @@
 import torch
 import torch.nn as nn
 
-# CUDA 디바이스 설정
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device: {device}")
-
-# 하이퍼파라미터 설정
-batch_size = 64
-dropout_fc = 0.1   # FC 레이어 dropout
-num_epochs = 300  # 에폭 수 30으로 제한
-
-# 체크포인트 저장 디렉토리 생성
-os.makedirs('./lstm_checkpoints', exist_ok=True)
-
 class TemperatureLSTM(nn.Module):
     '''
     레퍼 논문의 LSTM 모델을 그대로 구현
