@@ -46,10 +46,10 @@ class myDataset(Dataset):
         
         # 스케일러 로드
         try:
-            self.temp_std_scaler = joblib.load('temp_scaler.pkl')
-            self.co_std_scaler = joblib.load('co_scaler.pkl')
-            self.soot_std_scaler = joblib.load('soot_scaler.pkl')
-            self.devc_std_scaler = joblib.load('devc_scaler.pkl')
+            self.temp_std_scaler = joblib.load('./trained_scaler/temp_scaler.pkl')
+            self.co_std_scaler = joblib.load('./trained_scaler/temp_scaler.pkl')
+            self.soot_std_scaler = joblib.load('./trained_scaler/temp_scaler.pkl')
+            self.devc_std_scaler = joblib.load('./trained_scaler/temp_scaler.pkl')
             print("스케일러 로드 완료")
         except:
             print("스케일러 파일을 찾을 수 없습니다. standard_scale() 메소드를 호출하여 스케일러를 학습시키세요.")
@@ -268,10 +268,10 @@ class myDataset(Dataset):
         print("모든 스케일러 학습 완료!")
 
         # 스케일러 저장
-        joblib.dump(self.temp_std_scaler, 'temp_scaler.pkl')
-        joblib.dump(self.co_std_scaler, 'co_scaler.pkl')
-        joblib.dump(self.soot_std_scaler, 'soot_scaler.pkl')
-        joblib.dump(self.devc_std_scaler, "devc_scaler.pkl")
+        joblib.dump(self.temp_std_scaler, './trained_scaler/temp_scaler.pkl')
+        joblib.dump(self.co_std_scaler, './trained_scaler/temp_scaler.pkl')
+        joblib.dump(self.soot_std_scaler, './trained_scaler/temp_scaler.pkl')
+        joblib.dump(self.devc_std_scaler, "./trained_scaler/temp_scaler.pkl")
         print("모든 스케일러 저장 완료!")
 
 
