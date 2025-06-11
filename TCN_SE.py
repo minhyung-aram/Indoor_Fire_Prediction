@@ -3,7 +3,9 @@ import torch.nn as nn
 
 class SEBlock(nn.Module):
     """
-    Squeeze-and-Excitation Block for 5D inputs
+    Squeeze and Excitation 블록입니다. 기존 channel, width, height에서
+    width, height의 2차원 전역 풀링 대신 본 연구에선 channel, sequence, width, height로 진행되므로
+    3차원 전역 풀리을 사용하고 나머지는 똑같습니다.
     """
     def __init__(self, channels, reduction_ratio=8):
         super(SEBlock, self).__init__()
