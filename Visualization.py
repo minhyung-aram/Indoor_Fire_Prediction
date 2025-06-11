@@ -2,7 +2,7 @@ import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 from lstm_model import TemperatureLSTM  # 모델 임포트
-from processing_data2nd_s import myDataset  # 데이터셋 임포트
+from processing_data2nd_test import myDataset  # 데이터셋 임포트
 import joblib
 import time
 import os
