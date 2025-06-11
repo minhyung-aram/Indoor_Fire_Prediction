@@ -14,7 +14,8 @@ import joblib
 class myDataset(Dataset):
     def __init__(self, dataset_dir, seq_length=30, future_step=60, time_step=1):
         """
-        데이터셋 초기화
+        테스트용 데이터 클래스입니다. 반환되는 데이터의 seq_length를 자유롭게 조절할 수 있도록 설계한거 빼곤 
+        processing_data.py와 같습니다. 
         
         Args:
             dataset_dir (str): 데이터셋 디렉토리 경로
