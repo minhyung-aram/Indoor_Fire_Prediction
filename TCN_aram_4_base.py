@@ -24,7 +24,7 @@ print(f"Using device: {device}")
 # 하이퍼파라미터 설정
 batch_size = 64 
 dropout_tcn = 0.3  # TCN 블록 내 dropout
-num_epochs = 300    # 에폭 수 50으로 제한
+num_epochs = 300    # 에폭 수
 width = 10
 height = 7
 # 체크포인트 저장 디렉토리 생성
