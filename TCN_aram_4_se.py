@@ -12,7 +12,7 @@ class SEBlock(nn.Module):
         # 채널 수가 reduction_ratio보다 작은 경우 조정
         reduced_channels = max(channels // reduction_ratio, 1)
         
-        # 3D 데이터에 대한 전역 평균 풀링
+        # 3D 데이터에 대한 전역 평균 풀링 (시간축까지 풀링링)
         self.squeeze = nn.AdaptiveAvgPool3d(1)  # 시간과 공간 차원 모두 압축
         self.excitation = nn.Sequential(
             nn.Linear(channels, reduced_channels),

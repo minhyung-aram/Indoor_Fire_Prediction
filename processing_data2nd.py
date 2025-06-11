@@ -106,7 +106,11 @@ class myDataset(Dataset):
                 devc_data = pd.read_csv(devc_file, header=1)
                 devc_values = devc_data.iloc[:, 1:71].values.astype(np.float32)
                 
-                # 데이터 재구성
+                '''
+                데이터 재구성 단계계
+                이 부분은 pyrosim 온도계 설정 과정에서 순서를 제대로하지 않아 발생한
+                실수를 다시 정상적인 데이터 순서로 만들기 위해 한 작업입니다.
+                '''
                 re_devc_data = []
                 for row in devc_values:
                     row_2d = row.reshape(7, 10)
@@ -165,18 +169,6 @@ class myDataset(Dataset):
         joblib.dump(self.co_std_scaler, 'co_scaler.pkl')
         joblib.dump(self.soot_std_scaler, 'soot_scaler.pkl')
         joblib.dump(self.devc_std_scaler, "devc_scaler.pkl")
-
-
-
-        
-        
-
-# def heatmap(data_matrix,title):
-#     plt.figure(figsize=(12, 8))
-#     heatmap = sns.heatmap(data_matrix[2],cmap="jet")
-#     plt.title(title)
-#     # plt.gca().invert_yaxis()
-#     plt.savefig('fig1.png')
 
 
 

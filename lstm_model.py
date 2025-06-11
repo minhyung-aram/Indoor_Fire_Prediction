@@ -28,6 +28,11 @@ num_epochs = 300  # 에폭 수 30으로 제한
 os.makedirs('./lstm_checkpoints', exist_ok=True)
 
 class TemperatureLSTM(nn.Module):
+    '''
+    레퍼 논문의 LSTM 모델을 그대로 구현
+    입력: (batch_size, seq_length, features)
+    출력: 온도, CO, 그을음 예측 이미지
+    '''
     def __init__(self, input_size=70, num_layers=2):
         super(TemperatureLSTM, self).__init__()
         
@@ -47,7 +52,7 @@ class TemperatureLSTM(nn.Module):
         batch_size = x.size(0)
         
         lstm_out, (hn, cn) = self.lstm(x)  # (batch, 30, 512)
-        fc_out = self.fc(lstm_out)         # (batch, 30, 858)
+        fc_out = self.fc(lstm_out)         # Sequence-wise FC, (batch, 30, 858)
         fc_out = fc_out.reshape(batch_size, 30, 26, 33)
         transposecnn_out = self.transposecnn(fc_out)  # torch.Size([batch, 16, 53, 68])
         transposecnn_out = self.conv_bn(transposecnn_out)
