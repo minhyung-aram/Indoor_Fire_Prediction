@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class TemperatureLSTM(nn.Module):
     '''
-    레퍼 논문의 LSTM 모델을 그대로 구현
+    레퍼 논문의 LSTM 모델을 그대로 구현한 모델입니다.
     입력: (batch_size, seq_length, features)
     출력: 온도, CO, 그을음 예측 이미지
     '''
