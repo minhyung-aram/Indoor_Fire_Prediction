@@ -204,33 +204,6 @@ def train_model(model, train_dataloader, valid_dataloader, num_epochs=300, resum
         if optimizer.param_groups[0]['lr'] < 0.0001:
             break
     
-    # 손실 그래프 저장
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(range(1, len(train_losses) + 1), train_losses, label='Train Loss')
-    # plt.plot(range(1, len(val_losses) + 1), val_losses, label='Validation Loss')
-    # plt.xlabel('Epochs')
-    # plt.ylabel('Loss')
-    # plt.title('Training and Validation Loss')
-    # plt.legend()
-    # plt.grid(True)
-    # plt.savefig('./TCN_loss_graph.png')
-    # plt.close()
-    
-    # # R² 그래프 저장
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(range(1, len(val_r2_temp) + 1), val_r2_temp, label='Temperature R²')
-    # plt.plot(range(1, len(val_r2_co) + 1), val_r2_co, label='CO R²')
-    # plt.plot(range(1, len(val_r2_soot) + 1), val_r2_soot, label='Soot R²')
-    # plt.xlabel('Epochs')
-    # plt.ylabel('R² Score')
-    # plt.title('Validation R² Scores')
-    # plt.legend()
-    # plt.grid(True)
-    # plt.savefig('./TCN_r2_graph.png')
-    # plt.close()
-    
-    # print("학습 완료! 손실 그래프와 R² 그래프가 저장되었습니다.")
-    
     return train_losses, val_losses, val_r2_temp, val_r2_co, val_r2_soot
 
 
