@@ -10,6 +10,12 @@ import torch
 from torch.utils.data import DataLoader
 from torchinfo import summary
 
+'''
+모델이 예측한 분포를 시각화하는 코드입니다.
+모든 테스트 데이터 셋에대한 예측을 쭉 보거나
+특정 시나리오를 인덱스로 쭉 직접 보거나
+아무 인덱스를 입력하여 랜덤으로 볼수도 있습니다.
+'''
 # CUDA 설정
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
