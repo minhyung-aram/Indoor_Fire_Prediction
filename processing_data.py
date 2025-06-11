@@ -12,6 +12,9 @@ import glob
 import joblib
 
 class myDataset(Dataset):
+    """
+    훈련용 데이터 클래스입니다. 데이터를 반환할 때 시퀀스 길이는 고정으로 30을 반환합니다.
+    """
     def __init__(self, dataset_dir, seq_length=30):
         self.dir_list = os.listdir(dataset_dir)
         self.dir_name = os.path.join("./"+dataset_dir)
