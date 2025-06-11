@@ -13,15 +13,6 @@ import joblib
 
 class myDataset(Dataset):
     def __init__(self, dataset_dir, seq_length=30):
-     """
-        데이터셋 초기화
-        
-        Args:
-            dataset_dir (str): 데이터셋 디렉토리 경로
-            seq_length (int): 입력 시퀀스 길이 (몇 개의 연속된 시간 포인트를 사용할지)
-            future_step (int): 예측할 미래 시점의 스텝 수 (현재 시점으로부터 몇 스텝 이후를 예측할지)
-            time_step (float): 각 스텝의 시간 간격 (초 단위)
-        """
         self.dir_list = os.listdir(dataset_dir)
         self.dir_name = os.path.join("./"+dataset_dir)
         self.temp_std_scaler = StandardScaler()
