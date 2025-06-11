@@ -1,19 +1,5 @@
 import torch
 import torch.nn as nn
-from processing_data2nd import *
-from torch.utils.data import DataLoader, random_split
-import torch.nn.functional as F
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import MinMaxScaler, RobustScaler
-import os
-import glob
-import matplotlib.pylab as plt
-import random
-from tqdm import tqdm
-import torch.optim as optim
-import math
-from sklearn.metrics import r2_score
 
 # CUDA 디바이스 설정
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
