@@ -1,21 +1,13 @@
 import torch
 import torch.nn as nn
-from processing_data2nd import *
+from processing_data import * # 데이터 처리 모듈 로드드
 from torch.utils.data import DataLoader, random_split
 import torch.nn.functional as F
-import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler, RobustScaler
 import os
-import glob
-import matplotlib.pylab as plt
-import random
 from tqdm import tqdm
-from torch.nn.utils.parametrizations import weight_norm
 import torch.optim as optim
-import math
 from sklearn.metrics import r2_score
-from tqdm import tqdm
 from test_model import TemperatureTCN
 
 # CUDA 디바이스 설정
