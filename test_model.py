@@ -5,7 +5,7 @@ import os
 import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-from TCN_aram_4_base import *  # LSTM 모델 임포트
+from TCN_aram_4_base import *  # 테스트할 모델 불러오기
 from processing_data2nd_test import *  # 데이터 처리 모듈 임포트
 import joblib
 from sklearn.metrics import r2_score, mean_squared_error
