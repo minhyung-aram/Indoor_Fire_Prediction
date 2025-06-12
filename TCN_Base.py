@@ -22,7 +22,7 @@ class ResidualBlock(nn.Module):
             in_channels=out_channels,
             out_channels=out_channels,
             kernel_size=(kernel_size, 3, 3),
-            padding=(((kernel_size-1) * dilation) // 2, 1, 1), # 왼쪽에만 패딩
+            padding=(((kernel_size-1) * dilation) // 2, 1, 1),
             dilation=(dilation, 1, 1),
             bias=False
         )
