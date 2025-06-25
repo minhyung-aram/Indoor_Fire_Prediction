@@ -19,7 +19,7 @@ class myDataset(Dataset):
         self.dir_list = os.listdir(dataset_dir)
         self.dir_name = os.path.join("./"+dataset_dir)
         self.temp_std_scaler = StandardScaler()
-        self.co_std_scaler = StandardScaler()  # 오타 수정: co_std_sclaer -> co_std_scaler
+        self.co_std_scaler = StandardScaler() 
         self.soot_std_scaler = StandardScaler()
         self.devc_std_scaler = StandardScaler()
         print(self.dir_list)
